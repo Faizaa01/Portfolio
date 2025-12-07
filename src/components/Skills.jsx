@@ -67,9 +67,7 @@ const Skills = () => {
                 className="group relative bg-gradient-to-br from-gray-900/90 via-gray-800/50 to-black rounded-2xl p-7 border border-purple-900/30 backdrop-blur-sm transition-all duration-500 hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-3 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]"
                 style={{animationDelay: `${0.2 + index * 0.15}s`}}
               >
-                {/* Glow */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/10 group-hover:to-blue-600/10 transition-all duration-500"></div>
-
                 <div className="relative z-10">
                   {/* Category header */}
                   <div className="flex items-center gap-3 mb-5">
@@ -85,7 +83,7 @@ const Skills = () => {
                     </h4>
                   </div>
 
-                  {/* SKILL PILL BUTTONS */}
+                  {/* Skill Buttons */}
                   <div className="flex flex-wrap gap-3">
                     {group.items.map((skill, i) => {
                       const colors = [
