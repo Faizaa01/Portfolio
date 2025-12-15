@@ -3,8 +3,17 @@ import g1 from '../assets/g1.png';
 import g2 from '../assets/g2.png';
 import g3 from '../assets/g3.png';
 import g4 from '../assets/g4.png';
-import img2 from '../assets/2.png';
-import img3 from '../assets/3.png';
+import b from '../assets/2.png';
+import b1 from '../assets/b1.png';
+import b2 from '../assets/b2.png';
+import b3 from '../assets/b3.png';
+import b4 from '../assets/b4.png';
+import b5 from '../assets/b5.png';
+import b6 from '../assets/b6.png';
+import b7 from '../assets/b7.png';
+import e from '../assets/3.png';
+import e1 from '../assets/e1.png';
+import e2 from '../assets/e2.png';
 
 const projects = [
   {
@@ -46,7 +55,7 @@ const projects = [
     "- Backend with DRF and Supabase, JWT authentication for security"
 ],
     tech: ["React", "DRF", "Tailwind", "Supabase", "JWT"],
-    images: [img2],
+    images: [b, b1, b2, b3, b4, b5, b6, b7],
     backend_github: "https://github.com/Faizaa01/BookHeaven",
     frontend_github: "https://github.com/Faizaa01/BookHeaven-Client",
     live: "https://book-heaven-client-xi.vercel.app"
@@ -67,7 +76,7 @@ const projects = [
         "- Backend with Django and PostgreSQL for data integrity and performance"
     ],
     tech: ["Django", "Tailwind", "PostgreSQL"],
-    images: [img3],
+    images: [e1,e, e2],
     github: "https://github.com/Faizaa01/Event_management",
     live: "https://event-management-pi-teal.vercel.app"
   }

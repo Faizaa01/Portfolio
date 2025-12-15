@@ -22,7 +22,7 @@ const ProjectDetails = () => {
       <div className="container mx-auto max-w-5xl relative z-10">
         {/* Title */}
         <div className="text-center mb-12 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
-          <h3 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient transition-all duration-500 hover:scale-105">
+          <h3 className="text-5xl md:text-6xl font-serif font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient transition-all duration-500 hover:scale-105">
             {project.title}
           </h3>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">{project.description}</p>
@@ -46,7 +46,7 @@ const ProjectDetails = () => {
           {project.tech.map((t, i) => (
             <span
               key={i}
-              className="px-3 py-1.5 text-sm rounded border border-gray-700/50 bg-gray-900/50 text-gray-300 backdrop-blur-sm transition-all duration-300 hover:bg-blue-800/50 hover:text-white hover:scale-105"
+              className="px-3 py-1.5 text-lg rounded border border-gray-700/50 bg-gray-900/50 text-gray-300 backdrop-blur-sm transition-all duration-300 hover:bg-blue-800/50 hover:text-white hover:scale-105"
             >
               {t}
             </span>
@@ -55,15 +55,15 @@ const ProjectDetails = () => {
 
         {/* Full Description */}
         {project.fullDes && (
-  <div className="mb-8">
-    <h4 className="text-2xl font-semibold text-white mb-4">Project Details</h4>
-    <div className="text-gray-300 space-y-2">
-      {project.fullDes.map((point, idx) => (
-        <p key={idx}>{point}</p>
-      ))}
-    </div>
-  </div>
-)}
+          <div className="mb-8">
+            <h4 className="text-3xl font-semibold text-white mb-4">Project Details</h4>
+            <div className="text-gray-300 font-mono text-xl space-y-2">
+              {project.fullDes.map((point, idx) => (
+                <p key={idx}>{point}</p>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Links */}
         <div className="flex flex-wrap gap-4 justify-center">
@@ -94,7 +94,7 @@ const ProjectDetails = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg hover:bg-gray-700/30 hover:text-white transition-all duration-300"
             >
-              <Github size={16} /> Code
+              <Github size={16} /> Source Code
             </a>
           )}
           {project.live && (
