@@ -1,37 +1,9 @@
-import { ExternalLink, Github } from "lucide-react";
-import img1 from '../assets/1.png';
-import img2 from '../assets/2.png';
-import img3 from '../assets/3.png';
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import projects from './ProjectData';
+import { Link } from "react-router";
 
 const Project = () => {
-  const projects = [
-    {
-      title: "Grocera – Online Grocery Store",
-      description: "Multi-role e-commerce system with cart, wishlist, checkout, and payment flow.",
-      tech: ["React", "DRF", "Tailwind", "Supabase", "JWT", "SSLCommerz"],
-      image: img1,
-      backend_github: "https://github.com/Faizaa01/Grocera",
-      frontend_github: "https://github.com/Faizaa01/Grocera-client",
-      live: "https://grocera-client-35zx.vercel.app"
-    },
-    {
-      title: "Book-Heaven – Library System",
-      description: "Borrow-return system with authentication, book management, and history tracking.",
-      tech: ["React", "DRF", "Tailwind", "Supabase", "JWT"],
-      image: img2,
-      backend_github: "https://github.com/Faizaa01/BookHeaven",
-      frontend_github: "https://github.com/Faizaa01/BookHeaven-Client",
-      live: "https://book-heaven-client-xi.vercel.app"
-    },
-    {
-      title: "Event-Master  – Event Management",
-      description: "Event reservation platform with role-based access and structured workflows.",
-      tech: ["Django", "Tailwind", "PostgreSQL"],
-      image: img3,
-      github: "https://github.com/Faizaa01/Event_management",
-      live: "https://event-management-pi-teal.vercel.app"
-    }
-  ];
+
 
   return (
     <section
@@ -68,7 +40,7 @@ const Project = () => {
               {/* Image */}
               <div className="relative w-full h-52 overflow-hidden">
                 <img
-                  src={p.image}
+                  src={p.images[0]} 
                   alt={p.title}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                 />
@@ -139,18 +111,26 @@ const Project = () => {
                         className="text-gray-400 hover:text-purple-400 transition-all duration-300 flex items-center gap-2 text-sm hover:scale-110 hover:translate-x-1"
                       >
                         <Github size={16} className="flex-shrink-0" /> 
-                        <span>Code</span>
+                        <span> Source Code</span>
                       </a>
                     )}
                   </div>
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full bg-gray-800/60 hover:bg-gradient-to-r hover:from-blue-900/50 hover:to-purple-900/50 text-gray-300 hover:text-white border border-gray-700/50 hover:border-purple-600/50 py-2.5 rounded transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 hover:scale-[1.02]"
-                  >
-                    <ExternalLink size={16} /> View Live
-                  </a>
+                  <div className="flex flex-1 gap-4">
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-1/2 bg-gray-800/60 hover:bg-gradient-to-r hover:from-blue-900/50 hover:to-purple-900/50 text-gray-300 hover:text-white border border-gray-700/50 hover:border-purple-600/50 py-2.5 rounded transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 hover:scale-[1.02]"
+                    >
+                      <ExternalLink size={16} /> View Live
+                    </a>
+                    <Link
+                      to={`/projects/${p.id}`} 
+                      className="w-1/2 bg-gray-800/60 hover:bg-gradient-to-r hover:from-blue-900/50 hover:to-purple-900/50 text-gray-300 hover:text-white border border-gray-700/50 hover:border-purple-600/50 py-2.5 rounded transition-all duration-300 flex items-center justify-center gap-2 text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 hover:scale-[1.02]"
+                    >
+                      Details <ArrowRight/>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
