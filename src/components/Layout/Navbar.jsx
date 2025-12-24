@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('about');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'skills', 'contact'];
+      const sections = ['about', 'projects', 'skills','education', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       // Check if scrolled past hero section
@@ -52,7 +52,7 @@ const Navbar = () => {
         </h1>
 
         <ul className="flex space-x-2">
-          {["about", "projects", "skills", "contact"].map((item) => (
+          {["about", "projects", "skills", "education", "contact"].map((item) => (
             <li
               key={item}
               className="relative group"

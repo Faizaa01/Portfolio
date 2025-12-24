@@ -56,8 +56,8 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-blue-500/20 rounded-lg blur-md group-hover:bg-blue-500/40 transition-all duration-500"></div>
                 <Linkedin className="relative text-blue-400 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-[0_0_10px_rgba(96,165,250,0.8)]" size={28} />
               </div>
-              <a href="https://bd.linkedin.com/in/faiza-noushin-priya-91aa17383" target="_blank" rel="noopener noreferrer" className="text-gray-300 text-lg transition-all duration-300 group-hover:text-blue-300 hover:translate-x-1 break-all">
-                bd.linkedin.com/in/faiza-noushin-priya-91aa17383
+              <a href="https://www.linkedin.com/in/faiza-noushin-priya" target="_blank" rel="noopener noreferrer" className="text-gray-300 text-lg transition-all duration-300 group-hover:text-blue-300 hover:translate-x-1 break-all">
+                linkedin.com/in/faiza-noushin-priya
               </a>
             </div>
 

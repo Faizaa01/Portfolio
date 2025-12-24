@@ -79,7 +79,7 @@ const About = () => {
                   <Github size={28} />
                 </a>
                 <a
-                  href="https://bd.linkedin.com/in/faiza-noushin-priya-91aa17383"
+                  href="https://www.linkedin.com/in/faiza-noushin-priya"
                   target="_blank" rel="noopener noreferrer"
                   className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:rotate-12 hover:drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]"
                 >

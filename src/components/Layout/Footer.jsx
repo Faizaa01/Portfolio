@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex space-x-6">
             {[
               { name: "GitHub", url: "#", icon: Github },
-              { name: "LinkedIn", url: "#", icon: Linkedin },
+              { name: "LinkedIn", url: "https://www.linkedin.com/in/faiza-noushin-priya", icon: Linkedin },
               { name: "Email", url: "mailto:faizaniha0062@email.com", icon: Mail }
             ].map((link) => {
               const Icon = link.icon;
@@ -38,7 +38,6 @@ const Footer = () => {
           <div className="w-32 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
           <p className="text-sm transition-all duration-300 hover:text-purple-300 flex items-center gap-2">
             © {new Date().getFullYear()} Faiza Noushin Priya. All rights reserved.
-            <Heart className="inline text-purple-500 animate-pulse" size={14} fill="currentColor" />
           </p>
         </div>
       </div>

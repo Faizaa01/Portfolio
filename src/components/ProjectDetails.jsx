@@ -19,7 +19,7 @@ const ProjectDetails = () => {
       </div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/50"></div>
 
-      <div className="container mx-auto max-w-5xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Title */}
         <div className="text-center mb-12 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
           <h3 className="text-5xl md:text-6xl font-serif font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient transition-all duration-500 hover:scale-105">
@@ -31,11 +31,11 @@ const ProjectDetails = () => {
         {/* Image Gallery */}
         <div className="flex overflow-x-auto gap-6 mb-8 py-2">
           {project.images.map((img, i) => (
-            <div key={i} className="flex-shrink-0 w-80 md:w-96 rounded-2xl shadow-xl overflow-hidden">
+            <div key={i} className="flex-shrink-0 w-80 md:w-max rounded-2xl shadow-xl overflow-hidden">
               <img
                 src={img}
                 alt={`${project.title} screenshot ${i + 1}`}
-                className="w-full h-64 md:h-72 object-cover transition-all duration-700 hover:scale-105 hover:brightness-110"
+                className="w-full h-64 object-cover transition-all duration-700 hover:scale-105 hover:brightness-110"
               />
             </div>
           ))}
