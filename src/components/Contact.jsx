@@ -45,8 +45,8 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-purple-500/20 rounded-lg blur-md group-hover:bg-purple-500/40 transition-all duration-500"></div>
                 <Mail className="relative text-purple-400 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]" size={28} />
               </div>
-              <a href="mailto:faizaniha0062@gmail.com" className="text-gray-300 text-lg transition-all duration-300 group-hover:text-purple-300 hover:translate-x-1 break-all">
-                faizaniha0062@gmail.com
+              <a href="mailto:xxahin08@gmail.com" className="text-gray-300 text-lg transition-all duration-300 group-hover:text-purple-300 hover:translate-x-1 break-all">
+                xxahin08@gmail.com
               </a>
             </div>
 

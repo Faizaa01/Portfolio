@@ -86,7 +86,7 @@ const About = () => {
                   <Linkedin size={28} />
                 </a>
                 <a
-                  href="mailto:faizaniha0062@gmail.com"
+                  href="mailto:xxahin08@gmail.com"
                   className="text-gray-400 hover:text-pink-400 transition-all duration-300 hover:scale-125 hover:rotate-12 hover:drop-shadow-[0_0_8px_rgba(244,114,182,0.8)]"
                 >
                   <Mail size={28} />

@@ -13,9 +13,9 @@ const Footer = () => {
           {/* Social Links with Icons */}
           <div className="flex space-x-6">
             {[
-              { name: "GitHub", url: "#", icon: Github },
+              { name: "GitHub", url: "https://github.com/Faizaa01", icon: Github },
               { name: "LinkedIn", url: "https://www.linkedin.com/in/faiza-noushin-priya", icon: Linkedin },
-              { name: "Email", url: "mailto:faizaniha0062@email.com", icon: Mail }
+              { name: "Email", url: "mailto:xxahin08@gmail.com", icon: Mail }
             ].map((link) => {
               const Icon = link.icon;
               return (
