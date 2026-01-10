@@ -1,14 +1,39 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
-const sendEmail = (e) => {
-  e.preventDefault();
-  emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'PUBLIC_KEY')
-    .then((result) => console.log(result.text))
-    .catch((error) => console.log(error.text));
-}
 
 const Contact = () => {
+  const[name, setName] = useState('');
+  const[email, setMail] = useState('');
+  const[message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: `Message from: ${email}\n\n${message}`,
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+    .then((result) => {
+      console.log("Success!", result);
+      setName('');
+      setMail('');
+      setMessage('');
+    })
+    .catch((error) => {
+      console.log("Failed to send message. Try again.");
+      console.log(error);
+    });
+  }
+
   return (
     <section
       id="contact"
@@ -75,12 +100,33 @@ const Contact = () => {
 
           {/* Right: Contact Form */}
           <div className="lg:w-1/2 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
-            <form onSubmit={sendEmail} className="flex flex-col gap-3 bg-gradient-to-b from-black via-gray-950 to-black p-5 lg:p-8 rounded-xl border border-purple-800/30 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-600/30">
-              <h4 className="text-2xl text-white font-bold mb-2 text-center lg:text-left">Send a Message</h4>
-              <input type="text" placeholder="Your Name" className="px-4 py-3 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300"/>
-              <input type="email" placeholder="Your Email" className="px-4 py-3 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300"/>
-              <textarea name="message" placeholder="Your Message" rows={3} className="px-4 py-3 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300 resize-none"></textarea>
-              <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3 bg-gradient-to-b from-gray-900/50 via-gray-800/50 to-black p-6 rounded-xl border border-purple-800/30 backdrop-blur-sm transition-all duration-500 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-600/30">
+              <h4 className="text-2xl text-white font-semibold mb-2 text-center">Send a Message</h4>
+              <input 
+              type="text"
+              placeholder="Your Name" 
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="px-4 py-2 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300"
+              />
+              
+              <input 
+              type="email" 
+              placeholder="Your Email" 
+              value={email}
+              onChange={(e) => setMail(e.target.value)}
+              className="px-4 py-2 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300"
+              />
+              
+              <textarea 
+              placeholder="Your Message" 
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={3} 
+              className="px-4 py-2 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300 resize-none">
+              </textarea>
+              
+              <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-blue-900/70 to-purple-900/70 hover:from-blue-800/80 hover:to-purple-800/80 text-white font-semibold rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 transition-all hover:-translate-y-1 duration-300 border border-gray-700/50 hover:border-purple-500/70">
                 Send
               </button>
             </form>

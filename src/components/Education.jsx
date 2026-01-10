@@ -1,25 +1,54 @@
-import { BookOpen, Award } from "lucide-react";
+import { BookA, BookAlert, BookOpen, Building, Calendar, MapPin, University} from "lucide-react";
 import a1 from '../assets/4.png';
 import a2 from '../assets/5.png';
+import img from '../assets/uni.jpg';
 
 const Education = () => {
   const education = {
-    degree: "B.Sc. in Computer Science",
+    degree: "B.Sc. in Computer Science & Engineering",
     institution: "City University",
     year: "2023 - 2027",
-    description: "Focus on software development and machine learning.",
+    location: "Savar, Dhaka, Bangladesh",
+    description:
+      "Pursuing a Bachelor's degree in Computer Science & Engineering with a strong focus on software development, problem solving, and core computer science concepts.",
+    topics: [
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Database Systems",
+      "Software Engineering Principles",
+      "Operating Systems (foundations)",
+      "Web & Backend Development",
+    ],
   };
 
-  const courseCertificates = [
+  const certificates = [
     {
-      title: "CSE fundamentals with Phitron: Fall 2023",
-      file: "../../public/certificate.pdf",
+      title: "CSE Fundamentals with Phitron (Spring 2024)",
+      institution: "Phitron",
+      year: "2024 - 2025",
+      location: "Online Platform",
       image: a1,
+      bullets: [
+        "Programming Languages: C, C++, Python",
+        "Data Structures & Algorithms, Problem Solving",
+        "Software Development concepts & Backend fundamentals",
+        "Frontend: HTML, CSS, Bootstrap, Tailwind, React",
+        "Backend: Django, Django REST Framework",
+        "Database: PostgreSQL, MySQL",
+      ],
     },
     {
-      title: "Certificate of Achievement - CodeChef with 2 Stars Coder Rank",
-      file: "../../public/code.pdf",
+      title: "CodeChef – 2★ Coder",
+      institution: "Phitron",
+      year: "2025",
+      location: "Online Platform",
       image: a2,
+      bullets: [
+        "Achieved 2-star rating, demonstrating solid",
+        "competitive programming ability using C++ and Python",
+        "Enhanced algorithmic thinking and problem-solving skills",
+        "Solved diverse coding challenges on CodeChef platform",
+      ],
     },
   ];
 
@@ -37,71 +66,113 @@ const Education = () => {
       </div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/50"></div>
 
-      <div className="container mx-auto max-w-4xl relative z-10">
-        {/* Education Headline */}
-        <div className="mb-12 text-center opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
-          <h3 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] transition-all duration-500 hover:scale-105">
+      <div className="container mx-auto max-w-6xl relative z-10">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <h3 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
             Education
           </h3>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Academic qualifications
+          <p className="text-slate-400 text-lg">
+            Academic background & certifications
           </p>
         </div>
 
         {/* Education Card */}
-        <div className="relative bg-gradient-to-br from-gray-900/90 via-gray-800/50 to-black rounded-2xl p-10 border border-purple-900/30 backdrop-blur-sm transition-all duration-500 hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-3 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards] mb-16">
-          <div className="flex items-center gap-4 mb-5">
-            <BookOpen size={28} className="text-purple-400 transition-all duration-500" />
-            <h4 className="text-2xl text-white font-bold">{education.degree}</h4>
+        <div className="relative w-full bg-gradient-to-br from-gray-900/90 via-gray-800/50 to-black rounded-2xl p-8 border border-purple-900/30 backdrop-blur-sm transition-all duration-500 hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-3 mb-16 flex flex-col md:flex-row gap-10">
+         <img
+            src={img}
+            alt="University"
+            className="w-36 h-36 md:w-100 md:h-76 object-cover rounded-xl flex-shrink-0"
+          />
+          
+          <div className="flex-1 text-left">
+              <div className="flex items-center gap-4 mb-4">
+                <BookOpen size={24} className="text-purple-400" />
+                <h4 className="text-2xl text-white font-bold">{education.degree}</h4>
+              </div>
+
+              <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+                <University size={16} />
+                <span>{education.institution}</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+                <Calendar size={16} />
+                <span>{education.year}</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400 text-sm mb-8">
+                <MapPin size={16} />
+                <span>{education.location}</span>
+              </div>
+
+              <p className="text-gray-300 mb-4 leading-relaxed">{education.description}</p>
+
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-400 text-sm">
+                {education.topics.map((topic, i) => (
+                  <li key={i}>• {topic}</li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <p className="text-slate-400 mb-2 font-semibold">
-            {education.institution} | {education.year}
-          </p>
-          <p className="text-gray-400">{education.description}</p>
-        </div>
-
-        {/* Course Certificates Section */}
-        <div className="text-center mb-8 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
-        <h3 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] transition-all duration-500 hover:scale-105">
+        {/* Certificates */}
+        <div className="text-center mb-8">
+          <h3 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
             Course Certificates
-        </h3>
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-6">
-            Professional and online course achievements
-        </p>
+          </h3>
+          <p className="text-slate-400 text-lg mb-8">
+            Practical learning and skill validation
+          </p>
 
-        <div className="flex flex-col gap-6">
-            {courseCertificates.map((cert, i) => (
-            <div
+          <div className="flex flex-col gap-6">
+            {certificates.map((cert, i) => (
+              <div
                 key={i}
-                className="flex items-center gap-6 px-4 py-4 rounded-lg bg-gray-800/50 border border-purple-700/40 hover:bg-blue-700/30 hover:shadow-lg hover:border-blue-500/60 transition-all duration-300 text-gray-200"
-            >
+                className="flex items-center gap-6 px-6 py-6 rounded-lg bg-gray-800/50 border border-purple-700/40 hover:bg-blue-700/30 hover:shadow-lg hover:border-blue-500/60 transition-all duration-300 text-gray-200"
+              >
                 {cert.image && (
-                <img
+                  <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-40 h-40 object-cover rounded-lg flex-shrink-0"
-                />
+                    className="w-110 h-80 object-cover rounded-lg flex-shrink-0"
+                  />
                 )}
-                <div className="flex-1">
-                <h4 className="text-lg md:text-xl font-semibold text-white">
+                <div className="flex-1 text-left">
+                  <h4 className="text-lg md:text-xl font-semibold text-white mb-4">
                     {cert.title}
-                </h4>
-                {/* Optional: short description or date */}
-                {/* <p className="text-gray-300 text-sm mt-1">Completed: Fall 2023</p> */}
+                  </h4>
+
+                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+                    <University size={16} />
+                    <span>{cert.institution}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+                    <Calendar size={16} />
+                    <span>{cert.year}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-6">
+                    <MapPin size={16} />
+                    <span>{cert.location}</span>
+                  </div>
+
+                  {/* <ul className="list-disc list-inside text-gray-300 text-sm mb-2">
+                    {cert.bullets.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul> */}
+
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-100 text-sm">
+                    {cert.bullets.map((bullet, i) => (
+                      <li key={i}>• {bullet}</li>
+                    ))}
+                  </ul>
                 </div>
-            </div>
+              </div>
             ))}
-        </div>
+          </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
         @keyframes gradient {
           0%,100% { background-position:0% 50%; }
           50% { background-position:100% 50%; }
