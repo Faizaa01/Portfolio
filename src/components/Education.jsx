@@ -55,7 +55,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="py-24 px-6 min-h-screen flex flex-col items-center relative overflow-hidden"
+      className="py-12 px-6 min-h-screen flex flex-col items-center relative overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black"></div>
@@ -133,7 +133,7 @@ const Education = () => {
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-110 h-80 object-cover rounded-lg flex-shrink-0"
+                    className="w-110 h-78 object-cover rounded-lg flex-shrink-0"
                   />
                 )}
                 <div className="flex-1 text-left">

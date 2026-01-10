@@ -7,6 +7,8 @@ const Contact = () => {
   const[name, setName] = useState('');
   const[email, setMail] = useState('');
   const[message, setMessage] = useState('');
+  const [buttonText, setButtonText] = useState('Send');
+  const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,10 +29,21 @@ const Contact = () => {
       setName('');
       setMail('');
       setMessage('');
+      setButtonText('Sent');
+      setIsSent(true);
+      setTimeout(() => {
+        setButtonText('Send');
+        setIsSent(false);
+      }, 2000);
     })
     .catch((error) => {
-      console.log("Failed to send message. Try again.");
-      console.log(error);
+      console.log("Failed to send message.", error);
+      setButtonText('Failed');
+      setIsSent(true);
+      setTimeout(() => {
+        setButtonText('Send');
+        setIsSent(false);
+      }, 2000);
     });
   }
 
@@ -126,8 +139,14 @@ const Contact = () => {
               className="px-4 py-2 rounded-lg bg-gray-900/50 border border-purple-800/30 text-gray-200 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500/60 transition-all duration-300 resize-none">
               </textarea>
               
-              <button type="submit" className="mt-2 px-6 py-3 bg-gradient-to-r from-blue-900/70 to-purple-900/70 hover:from-blue-800/80 hover:to-purple-800/80 text-white font-semibold rounded-lg hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 transition-all hover:-translate-y-1 duration-300 border border-gray-700/50 hover:border-purple-500/70">
-                Send
+              <button type="submit" 
+              className={`mt-2 px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300 border border-gray-700/50
+                ${isSent 
+                  ? 'bg-gray-600/50 border-gray-600/70 shadow-lg hover:-translate-y-1'
+                  : 'bg-gradient-to-r from-blue-900/60 to-purple-900/60 hover:from-blue-800/70 hover:to-purple-800/70 hover:scale-102 hover:shadow-lg hover:shadow-violet-500/40 hover:-translate-y-1'
+                }`}
+              >
+                {buttonText}
               </button>
             </form>
           </div>

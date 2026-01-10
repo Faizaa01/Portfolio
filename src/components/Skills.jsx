@@ -9,6 +9,7 @@ import {
   FaGitAlt,
   FaGithub,
   FaDatabase,
+  FaCogs,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -19,6 +20,9 @@ import {
   SiVercel,
   SiNetlify,
   SiRender,
+  SiCplusplus,
+  SiC,
+  SiCodechef,
 } from "react-icons/si";
 
 const skillIconMap = {
@@ -45,7 +49,10 @@ const skillIconMap = {
   Netlify: SiNetlify,
   Render: SiRender,
 
-  "Problem-solving": FaReact,
+  C: SiC,
+  "C++": SiCplusplus,
+  "DSA": FaCogs,
+  "Problem-solving": SiCodechef,
 };
 
 const Skills = () => {
@@ -53,12 +60,12 @@ const Skills = () => {
     {
       category: "Frontend",
       icon: Layout,
-      items: ["React.js", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bootstrap"],
+      items: ["React.js", "JavaScript", "HTML", "Tailwind CSS", "CSS", "Bootstrap"],
     },
     {
       category: "Backend",
       icon: Server,
-      items: ["Django", "Django REST Framework", "Python", "REST APIs"],
+      items: ["Python", "Django", "Django REST Framework", "REST APIs"],
     },
     {
       category: "Databases",
@@ -73,7 +80,7 @@ const Skills = () => {
     {
       category: "Other Skills",
       icon: Code2,
-      items: ["Problem-solving"],
+      items: ["C", "C++", "DSA", "Problem-solving"],
     },
   ];
 
@@ -86,15 +93,35 @@ const Skills = () => {
     "border-sky-700/40 hover:bg-sky-600/30 hover:border-sky-500/70 hover:shadow-sky-500/50",
   ];
 
+  const marqueeSkills = [
+  "C",
+  "C++",
+  "React.js",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Django",
+  "Python",
+  "REST APIs",
+  "PostgreSQL",
+  "MySQL",
+  "Supabase",
+  "Git",
+  "GitHub",
+  "Vercel",
+  "Netlify",
+  "Render",
+];
+
   return (
     <section
       id="skills"
       className="py-24 px-6 min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* Premium gradient background with animated glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black"></div>
 
-      {/* Animated ambient light orbs */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
         <div
@@ -104,7 +131,6 @@ const Skills = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Noise texture overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/50"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -115,6 +141,28 @@ const Skills = () => {
           <p className="text-slate-400 text-lg max-w-2xl transition-all duration-300 hover:text-slate-300 hover:translate-x-1">
             Technologies and tools I use to bring ideas to life
           </p>
+        </div>
+        
+
+        <div className="relative overflow-hidden py-6 mb-16">
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none"></div>
+          <div className="flex w-max animate-marquee gap-6 hover:[animation-play-state:paused]">
+            {[...marqueeSkills, ...marqueeSkills].map((skill, i) => {
+              const Icon = skillIconMap[skill];
+              return (
+                <div
+                  key={i}
+                  className={`flex items-center justify-center w-16 h-16 rounded-full 
+                    bg-gray-900/70 backdrop-blur-sm border
+                    transition-all duration-300
+                    ${colors[i % colors.length]}
+                  `}
+                >
+                  {Icon && <Icon className="text-3xl text-white" />}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -191,6 +239,20 @@ const Skills = () => {
         .animate-gradient {
           animation: gradient 3s ease infinite;
         }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+
       `}</style>
     </section>
   );
