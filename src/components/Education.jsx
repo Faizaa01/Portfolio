@@ -44,10 +44,10 @@ const Education = () => {
       location: "Online Platform",
       image: a2,
       bullets: [
-        "Achieved 2-star rating, demonstrating solid",
-        "competitive programming ability using C++ and Python",
-        "Enhanced algorithmic thinking and problem-solving skills",
-        "Solved diverse coding challenges on CodeChef platform",
+        "Achieved 2-star rating on CodeChef through consistent competitive programming",
+        "Solved algorithmic problems using C++ and Python",
+        "Strengthened problem-solving, logical reasoning, and algorithmic thinking",
+        "Practiced data structures, algorithms, and time complexity optimization",
       ],
     },
   ];
@@ -78,48 +78,57 @@ const Education = () => {
         </div>
 
         {/* Education Card */}
-        <div className="relative w-full bg-gradient-to-br from-gray-900/90 via-gray-800/50 to-black rounded-2xl p-8 border border-purple-900/30 backdrop-blur-sm transition-all duration-500 hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-3 mb-16 flex flex-col md:flex-row gap-10">
-         <img
+        <div className="relative w-full bg-gradient-to-br from-gray-900/90 via-gray-800/50 to-black rounded-2xl p-6 md:p-8 border border-purple-900/30 backdrop-blur-sm transition-all duration-500 hover:border-blue-500/60 hover:shadow-2xl hover:shadow-blue-500/30 hover:-translate-y-3 mb-16 flex flex-col lg:flex-row items-center lg:items-start gap-8 md:gap-10">
+          <img
             src={img}
             alt="University"
-            className="w-36 h-36 md:w-100 md:h-76 object-cover rounded-xl flex-shrink-0"
+            className="w-52 sm:w-64 md:w-[400px] h-auto rounded-xl object-cover flex-shrink-0"
           />
-          
-          <div className="flex-1 text-left">
-              <div className="flex items-center gap-4 mb-4">
-                <BookOpen size={24} className="text-purple-400" />
-                <h4 className="text-2xl text-white font-bold">{education.degree}</h4>
-              </div>
 
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
-                <University size={16} />
-                <span>{education.institution}</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
-                <Calendar size={16} />
-                <span>{education.year}</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400 text-sm mb-8">
-                <MapPin size={16} />
-                <span>{education.location}</span>
-              </div>
+          <div className="flex-1 text-center lg:text-left">
 
-              <p className="text-gray-300 mb-4 leading-relaxed">{education.description}</p>
-
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-400 text-sm">
-                {education.topics.map((topic, i) => (
-                  <li key={i}>• {topic}</li>
-                ))}
-              </ul>
+            <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
+              <BookOpen size={24} className="text-purple-400 flex-shrink-0" />
+              <h4 className="text-xl sm:text-2xl font-bold text-white">
+                {education.degree}
+              </h4>
             </div>
+
+            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm mb-2">
+              <University size={16} />
+              <span>{education.institution}</span>
+            </div>
+
+            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm mb-2">
+              <Calendar size={16} />
+              <span>{education.year}</span>
+            </div>
+
+            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 text-sm mb-6">
+              <MapPin size={16} />
+              <span>{education.location}</span>
+            </div>
+
+            <p className="text-gray-300 leading-relaxed mb-6">
+              {education.description}
+            </p>
+
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-400 text-sm text-left">
+              {education.topics.map((topic, i) => (
+                <li key={i}>• {topic}</li>
+              ))}
+            </ul>
+
           </div>
+        </div>
 
         {/* Certificates */}
         <div className="text-center mb-8">
-          <h3 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+          <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
             Course Certificates
           </h3>
-          <p className="text-slate-400 text-lg mb-8">
+
+          <p className="text-slate-400 text-base md:text-lg mb-8">
             Practical learning and skill validation
           </p>
 
@@ -127,40 +136,37 @@ const Education = () => {
             {certificates.map((cert, i) => (
               <div
                 key={i}
-                className="flex items-center gap-6 px-6 py-6 rounded-lg bg-gray-800/50 border border-purple-700/40 hover:bg-blue-700/30 hover:shadow-lg hover:border-blue-500/60 transition-all duration-300 text-gray-200"
+                className="flex flex-col lg:flex-row items-center lg:items-start gap-6 p-5 md:p-6 rounded-lg bg-gray-800/50 border border-purple-700/40 hover:bg-blue-700/30 hover:shadow-lg hover:border-blue-500/60 transition-all duration-300 text-gray-200"
               >
                 {cert.image && (
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-110 h-78 object-cover rounded-lg flex-shrink-0"
+                    className="w-full sm:w-96 lg:w-[440px] h-auto object-cover rounded-lg flex-shrink-0"
                   />
                 )}
-                <div className="flex-1 text-left">
-                  <h4 className="text-lg md:text-xl font-semibold text-white mb-4">
+
+                <div className="flex-1 text-center lg:text-left">
+                  <h4 className="text-xl md:text-2xl font-semibold text-white mb-4">
                     {cert.title}
                   </h4>
 
-                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+                  <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-400 text-sm mb-2">
                     <University size={16} />
                     <span>{cert.institution}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
+
+                  <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-400 text-sm mb-2">
                     <Calendar size={16} />
                     <span>{cert.year}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-6">
+
+                  <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-400 text-sm mb-6">
                     <MapPin size={16} />
                     <span>{cert.location}</span>
                   </div>
 
-                  {/* <ul className="list-disc list-inside text-gray-300 text-sm mb-2">
-                    {cert.bullets.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul> */}
-
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-100 text-sm">
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-gray-100 text-sm text-left">
                     {cert.bullets.map((bullet, i) => (
                       <li key={i}>• {bullet}</li>
                     ))}

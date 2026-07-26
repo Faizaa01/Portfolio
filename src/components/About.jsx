@@ -40,8 +40,10 @@ const About = () => {
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
+
           {/* Left Side */}
-          <div className="space-y-6 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
+          <div className="order-2 md:order-1 space-y-6 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
+          {/* <div className="space-y-6 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]"> */}
             <h2 className="text-5xl md:text-6xl font-serif font-semibold bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 bg-clip-text text-transparent animate-gradient transition-all duration-700 hover:scale-105 hover:translate-x-1 hover:translate-y-1">
               I am Faiza Noushin Priya
             </h2>
@@ -134,7 +136,8 @@ const About = () => {
           </div>
 
           {/* Right Side - Profile Image */}
-          <div className="flex justify-center opacity-0 animate-[fadeInUp_0.8s_ease-out_0.3s_forwards]">
+          <div className="order-1 md:order-2 flex justify-center mb-8 md:mb-0 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.3s_forwards]">
+          {/* <div className="flex justify-center opacity-0 animate-[fadeInUp_0.8s_ease-out_0.3s_forwards]"> */}
             <div className="relative group perspective-1000">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-40 animate-pulse group-hover:opacity-70"></div>
               <div
