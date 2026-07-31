@@ -1,4 +1,4 @@
-import { Code2, Database, Layout, Server } from "lucide-react";
+import { Code2, Database, Layout, Server, Brain } from "lucide-react";
 import {
   FaReact,
   FaJs,
@@ -10,6 +10,9 @@ import {
   FaGithub,
   FaDatabase,
   FaCogs,
+  FaNodeJs,
+  FaBrain,
+  FaChartBar
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -23,10 +26,18 @@ import {
   SiCplusplus,
   SiC,
   SiCodechef,
+  SiNextdotjs,
+  SiExpress,
+  SiMongodb,
+  SiPytorch,
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy,
 } from "react-icons/si";
 
 const skillIconMap = {
   "React.js": FaReact,
+  "Next.js": SiNextdotjs,
   JavaScript: FaJs,
   HTML: FaHtml5,
   CSS: FaCss3Alt,
@@ -37,11 +48,21 @@ const skillIconMap = {
   "Django REST Framework": SiDjango,
   Python: FaPython,
   "REST APIs": FaDatabase,
+  "Node.js": FaNodeJs,
+  "Express.js": SiExpress,
 
   PostgreSQL: SiPostgresql,
   MySQL: SiMysql,
+  MongoDB: SiMongodb,
   Supabase: SiSupabase,
   SQL: FaDatabase,
+
+  "Scikit-learn": SiScikitlearn,
+  PyTorch: SiPytorch,
+  "Hugging Face": FaBrain,
+  Pandas: SiPandas,
+  NumPy: SiNumpy,
+  Matplotlib: FaChartBar,
 
   Git: FaGitAlt,
   GitHub: FaGithub,
@@ -51,7 +72,7 @@ const skillIconMap = {
 
   C: SiC,
   "C++": SiCplusplus,
-  "DSA": FaCogs,
+  DSA: FaCogs,
   "Problem-solving": SiCodechef,
 };
 
@@ -60,17 +81,22 @@ const Skills = () => {
     {
       category: "Frontend",
       icon: Layout,
-      items: ["React.js", "JavaScript", "HTML", "Tailwind CSS", "CSS", "Bootstrap"],
+      items: ["React.js", "Next.js", "JavaScript", "HTML", "Tailwind CSS", "CSS", "Bootstrap"],
     },
     {
       category: "Backend",
       icon: Server,
-      items: ["Python", "Django", "Django REST Framework", "REST APIs"],
+      items: ["Python", "Django", "Django REST Framework", "REST APIs", "Node.js", "Express.js"],
     },
     {
       category: "Databases",
       icon: Database,
-      items: ["PostgreSQL", "MySQL", "Supabase", "SQL"],
+      items: ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "SQL"],
+    },
+    {
+      category: "AI & Machine Learning",
+      icon: Brain,
+      items: ["Scikit-learn", "PyTorch", "Hugging Face", "Matplotlib", "Pandas", "NumPy"],
     },
     {
       category: "Tools & Deployment",
@@ -94,26 +120,25 @@ const Skills = () => {
   ];
 
   const marqueeSkills = [
-  "C",
-  "C++",
-  "React.js",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Tailwind CSS",
-  "Bootstrap",
-  "Django",
-  "Python",
-  "REST APIs",
-  "PostgreSQL",
-  "MySQL",
-  "Supabase",
-  "Git",
-  "GitHub",
-  "Vercel",
-  "Netlify",
-  "Render",
-];
+    "Python",
+    "PyTorch",
+    "Scikit-learn",
+    "Hugging Face",
+    "Matplotlib",
+    "Pandas",
+    "NumPy",
+    "React.js",
+    "Next.js",
+    "JavaScript",
+    "Tailwind CSS",
+    "Django",
+    "Node.js",
+    "PostgreSQL",
+    "MongoDB",
+    "Git",
+    "GitHub",
+    "Vercel",
+  ];
 
   return (
     <section
@@ -142,7 +167,6 @@ const Skills = () => {
             Technologies and tools I use to bring ideas to life
           </p>
         </div>
-        
 
         <div className="relative overflow-hidden py-6 mb-16">
           <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black z-10 pointer-events-none"></div>
@@ -252,7 +276,6 @@ const Skills = () => {
         .animate-marquee {
           animation: marquee 30s linear infinite;
         }
-
       `}</style>
     </section>
   );
